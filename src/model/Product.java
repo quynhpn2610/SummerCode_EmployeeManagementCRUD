@@ -2,42 +2,42 @@ package model;
 
 public class Product {
     // Attributes
-    private int productId;
-    private String productName;
-    private String productBrand;
-    private double productCost;
+    private int id;
+    private String name;
+    private String brand;
+    private double price;
 
     // Accessors and Transformers
-    public int getProductId(){
-        return productId;
+    public int getId(){
+        return id;
     }
 
-    public void setProductId(int productId){
-        this.productId = productId;
+    public void setId(int id){
+        this.id = id;
     }
 
-    public String getProductName(){
-        return productName;
+    public String getName(){
+        return name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProductBrand() {
-        return productBrand;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setProductBrand(String productBrand) {
-        this.productBrand = productBrand;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public double getProductCost() {
-        return productCost;
+    public double getPrice() {
+        return price;
     }
 
-    public void setProductCost(double productCost){
-        this.productCost = productCost;
+    public void setPrice(double price){
+        this.price = price;
     }
 
     // Constructors
@@ -45,11 +45,11 @@ public class Product {
     public Product() {
     }
 
-    public Product(int productId, String productName, String productBrand, double productCost) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productBrand = productBrand;
-        this.productCost = productCost;
+    public Product(int id, String name, String brand, double price) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
     }
 
     // toString to display Product objects
@@ -57,10 +57,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productBrand='" + productBrand + '\'' +
-                ", productCost=" + productCost +
+                "productId=" + id +
+                ", productName='" + name + '\'' +
+                ", productBrand='" + brand + '\'' +
+                ", productCost=" + price +
                 '}';
     }
 }
