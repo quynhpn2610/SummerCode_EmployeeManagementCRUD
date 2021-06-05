@@ -16,5 +16,5 @@ public interface IProductService {
     void deleteProduct(int id);
 
     // Read a product
-    void showProduct(int id);
+    void showProduct(String name);
 }
