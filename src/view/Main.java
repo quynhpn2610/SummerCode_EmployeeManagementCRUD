@@ -6,21 +6,14 @@ import service.product.ProductService;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner sc = new Scanner(System.in);
-    static ProductService prService = new ProductService();
-    static void showMenu(){
-        System.out.println("Welcome to the Product Management program. Please select an option: ");
-        System.out.println("1 - Create new products");
-        System.out.println("2 - Show all products");
-        System.out.println("3 - Update a product");
-        System.out.println("4 - Delete a product");
-        System.out.println("5 - Search for a product");
-        System.out.println("6 - Quit program");
-    }
+    private static Menu menu;
+    private static final ProductService prService = new ProductService();
+    private static final Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         boolean condition = true;
         while(condition){
-            showMenu();
+            Menu.showMenu();
             int userChoice = Integer.parseInt(sc.nextLine());
             switch (userChoice) {
                 case 1: // Create
