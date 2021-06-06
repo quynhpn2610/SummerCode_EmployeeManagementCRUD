@@ -60,4 +60,10 @@ public class Menu {
         System.out.println("Enter product id");
         return Integer.parseInt(sc.nextLine());
     }
+
+    static String getProductNameToSearch() {
+        System.out.println("---Search for a product---");
+        System.out.println("Enter product name to search");
+        return sc.nextLine();
+    }
 }

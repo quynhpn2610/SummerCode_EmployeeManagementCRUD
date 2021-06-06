@@ -33,9 +33,7 @@ public class Main {
                     prService.deleteProduct(idToDelete);
                     break;
                 case 5: // Search for a product
-                    System.out.println("---Search for a product---");
-                    System.out.println("Enter product name");
-                    String nameToShow = sc.nextLine();
+                    String nameToShow = Menu.getProductNameToSearch();
                     prService.showProduct(nameToShow);
                     break;
                 case 6: // Quit
