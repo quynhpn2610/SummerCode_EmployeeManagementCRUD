@@ -16,16 +16,7 @@ public class Main {
             int userChoice = Menu.getUserChoice();
             switch (userChoice) {
                 case 1: // Create
-                    System.out.println("---Create new product---");
-                    System.out.println("Enter product id");
-                    int idToAdd = Integer.parseInt(sc.nextLine());
-                    System.out.println("Enter product name");
-                    String nameToAdd = sc.nextLine();
-                    System.out.println("Enter product brand");
-                    String brandToAdd = sc.nextLine();
-                    System.out.println("Enter product price");
-                    double priceToAdd = Double.parseDouble(sc.nextLine());
-                    Product newProduct = new Product(idToAdd, nameToAdd, brandToAdd, priceToAdd);
+                    Product newProduct = Menu.getProductToAdd();
                     prService.addProduct(newProduct);
                     break;
                 case 2: // Read all

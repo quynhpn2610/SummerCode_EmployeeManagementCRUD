@@ -1,5 +1,6 @@
 package view;
 
+import model.Product;
 import service.product.ProductService;
 
 import java.util.Scanner;
@@ -20,5 +21,18 @@ public class Menu {
 
     static int getUserChoice() {
         return Integer.parseInt(sc.nextLine());
+    }
+
+    static Product getProductToAdd() {
+        System.out.println("---Create new product---");
+        System.out.println("Enter product id");
+        int idToAdd = Integer.parseInt(sc.nextLine());
+        System.out.println("Enter product name");
+        String nameToAdd = sc.nextLine();
+        System.out.println("Enter product brand");
+        String brandToAdd = sc.nextLine();
+        System.out.println("Enter product price");
+        double priceToAdd = Double.parseDouble(sc.nextLine());
+        return new Product(idToAdd, nameToAdd, brandToAdd, priceToAdd);
     }
 }
