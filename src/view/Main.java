@@ -6,7 +6,6 @@ import service.product.ProductService;
 import java.util.Scanner;
 
 public class Main {
-    private static Menu menu;
     private static final ProductService prService = new ProductService();
     private static final Scanner sc = new Scanner(System.in);
 
@@ -14,7 +13,7 @@ public class Main {
         boolean condition = true;
         while(condition){
             Menu.showMenu();
-            int userChoice = Integer.parseInt(sc.nextLine());
+            int userChoice = Menu.getUserChoice();
             switch (userChoice) {
                 case 1: // Create
                     System.out.println("---Create new product---");
