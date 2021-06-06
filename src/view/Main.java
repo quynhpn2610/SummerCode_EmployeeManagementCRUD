@@ -29,9 +29,7 @@ public class Main {
                     prService.updateProduct(idToUpdate, updatedProduct.getId(), updatedProduct.getName(), updatedProduct.getBrand(), updatedProduct.getPrice());
                     break;
                 case 4: // Delete
-                    System.out.println("---Delete a product---");
-                    System.out.println("Enter product id");
-                    int idToDelete = Integer.parseInt(sc.nextLine());
+                    int idToDelete = Menu.getProductIdToDelete();
                     prService.deleteProduct(idToDelete);
                     break;
                 case 5: // Search for a product

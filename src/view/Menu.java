@@ -54,4 +54,10 @@ public class Menu {
         double newPrice = Double.parseDouble(sc.nextLine());
         return new Product(newId, newName, newBrand, newPrice);
     }
+
+    static int getProductIdToDelete() {
+        System.out.println("---Delete a product---");
+        System.out.println("Enter product id");
+        return Integer.parseInt(sc.nextLine());
+    }
 }
