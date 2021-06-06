@@ -24,18 +24,9 @@ public class Main {
                     prService.showAllProducts();
                     break;
                 case 3: // Update
-                    System.out.println("---Update a product---");
-                    System.out.println("Enter product id");
-                    int idToUpdate = Integer.parseInt(sc.nextLine());
-                    System.out.println("Enter new id");
-                    int newId = Integer.parseInt(sc.nextLine());
-                    System.out.println("Enter new name");
-                    String newName = sc.nextLine();
-                    System.out.println("Enter new brand");
-                    String newBrand = sc.nextLine();
-                    System.out.println("Enter new price");
-                    double newPrice = Double.parseDouble(sc.nextLine());
-                    prService.updateProduct(idToUpdate, newId, newName, newBrand, newPrice);
+                    int idToUpdate = Menu.getProductIdToUpdate();
+                    Product updatedProduct = Menu.getNewProductInfo();
+                    prService.updateProduct(idToUpdate, updatedProduct.getId(), updatedProduct.getName(), updatedProduct.getBrand(), updatedProduct.getPrice());
                     break;
                 case 4: // Delete
                     System.out.println("---Delete a product---");

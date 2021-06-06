@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Menu {
 
     private static final Scanner sc = new Scanner(System.in);
+    private static final ProductService prService = new ProductService();
 
     static void showMenu(){
         System.out.println("Welcome to the Product Management program. Please select an option: ");
@@ -34,5 +35,23 @@ public class Menu {
         System.out.println("Enter product price");
         double priceToAdd = Double.parseDouble(sc.nextLine());
         return new Product(idToAdd, nameToAdd, brandToAdd, priceToAdd);
+    }
+
+    static int getProductIdToUpdate() {
+        System.out.println("---Update a product---");
+        System.out.println("Enter product id");
+        return Integer.parseInt(sc.nextLine());
+    }
+
+    static Product getNewProductInfo() {
+        System.out.println("Enter new id");
+        int newId = Integer.parseInt(sc.nextLine());
+        System.out.println("Enter new name");
+        String newName = sc.nextLine();
+        System.out.println("Enter new brand");
+        String newBrand = sc.nextLine();
+        System.out.println("Enter new price");
+        double newPrice = Double.parseDouble(sc.nextLine());
+        return new Product(newId, newName, newBrand, newPrice);
     }
 }
