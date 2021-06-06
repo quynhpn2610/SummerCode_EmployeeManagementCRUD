@@ -10,7 +10,7 @@ public class Menu {
     private static final Scanner sc = new Scanner(System.in);
     private static final ProductService prService = new ProductService();
 
-    static void showMenu(){
+    static void showMenu() {
         System.out.println("Welcome to the Product Management program. Please select an option: ");
         System.out.println("1 - Create new products");
         System.out.println("2 - Show all products");

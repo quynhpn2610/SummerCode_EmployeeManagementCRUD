@@ -3,15 +3,12 @@ package view;
 import model.Product;
 import service.product.ProductService;
 
-import java.util.Scanner;
-
 public class Main {
     private static final ProductService prService = new ProductService();
-    private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         boolean condition = true;
-        while(condition){
+        while (condition) {
             Menu.showMenu();
             int userChoice = Menu.getUserChoice();
             switch (userChoice) {
