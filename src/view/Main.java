@@ -1,10 +1,11 @@
 package view;
 
 import model.Product;
+import service.product.IProductService;
 import service.product.ProductService;
 
 public class Main {
-    private static final ProductService prService = new ProductService();
+    private static final IProductService prService = new ProductService();
 
     public static void main(String[] args) {
         boolean condition = true;
