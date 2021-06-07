@@ -1,5 +1,6 @@
 package service.product;
 
+import io.FileHandle;
 import model.Product;
 import service.product.IProductService;
 
@@ -9,14 +10,36 @@ import java.util.Locale;
 public class ProductService implements IProductService {
     // Attributes
     ArrayList<Product> productList = new ArrayList<>();
+    FileHandle fileHandle = new FileHandle();
     // Methods
     @Override
     public void addProduct(Product p) {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
         productList.add(p);
+        try {
+            fileHandle.writeFile(productList);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Cannot write file");
+        }
     }
 
     @Override
     public void showAllProducts() {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
+
+
         if(productList.isEmpty()){
             System.out.println("No product to show");
         }
@@ -27,6 +50,12 @@ public class ProductService implements IProductService {
 
     @Override
     public void updateProduct(int id, int newId, String newName, String newBrand, double newPrice) {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
         int count = 0;
         if (productList.isEmpty()){
             System.out.println("Empty list. Cannot update.");
@@ -47,11 +76,24 @@ public class ProductService implements IProductService {
         }
         else {
             System.out.println("Successfully updated.");
+            try {
+                fileHandle.writeFile(productList);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Cannot write file");
+            }
         }
     }
 
     @Override
     public void deleteProduct(int id) {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
         int count = 0;
         if (productList.isEmpty()){
             System.out.println("Empty list. Cannot delete.");
@@ -67,11 +109,24 @@ public class ProductService implements IProductService {
             System.out.println("Cannot delete.");
         } else{
             System.out.println("Successfully deleted.");
+            try {
+                fileHandle.writeFile(productList);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Cannot write file");
+            }
         }
     }
 
     @Override
     public void showProduct(String name) {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
         if (productList.isEmpty()){
             System.out.println("Empty list. No product to show.");
             return;

@@ -1,6 +1,5 @@
 package view;
 
-import com.sun.codemodel.internal.JTryBlock;
 import model.Product;
 import service.product.ProductService;
 
