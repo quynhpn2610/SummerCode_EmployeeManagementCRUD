@@ -6,7 +6,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class FileHandle {
-    private final String filePath = "/Users/quynhpn2610/Desktop/SummerCode/Java/ProductManagementCRUD/product.txt";
+
+    private final String filePath = System.getenv("fileSource");
 
     public void writeFile(ArrayList<Product> productList) throws IOException {
         File file = new File(filePath);
