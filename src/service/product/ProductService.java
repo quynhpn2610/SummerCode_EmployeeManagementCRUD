@@ -14,12 +14,6 @@ public class ProductService implements IProductService {
     // Methods
     @Override
     public void addProduct(Product p) {
-        try {
-            productList = (ArrayList<Product>) fileHandle.readFile();
-        }
-        catch (Exception e) {
-            System.out.println("Cannot read file");
-        }
         productList.add(p);
         try {
             fileHandle.writeFile(productList);
