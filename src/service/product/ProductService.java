@@ -2,10 +2,8 @@ package service.product;
 
 import io.FileHandle;
 import model.Product;
-import service.product.IProductService;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class ProductService implements IProductService {
     // Attributes
