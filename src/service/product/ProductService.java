@@ -44,6 +44,12 @@ public class ProductService implements IProductService {
 
     @Override
     public void updateProduct(int id, int newId, String newName, String newBrand, double newPrice) {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
         int count = 0;
         if (productList.isEmpty()){
             System.out.println("Empty list. Cannot update.");
@@ -64,6 +70,13 @@ public class ProductService implements IProductService {
         }
         else {
             System.out.println("Successfully updated.");
+            try {
+                fileHandle.writeFile(productList);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Cannot write file");
+            }
         }
     }
 
