@@ -1,5 +1,6 @@
 package service.product;
 
+import io.FileHandle;
 import model.Product;
 import service.product.IProductService;
 
@@ -9,14 +10,30 @@ import java.util.Locale;
 public class ProductService implements IProductService {
     // Attributes
     ArrayList<Product> productList = new ArrayList<>();
+    FileHandle fileHandle = new FileHandle();
     // Methods
     @Override
     public void addProduct(Product p) {
         productList.add(p);
+        try {
+            fileHandle.writeFile(productList);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Cannot write file");
+        }
     }
 
     @Override
     public void showAllProducts() {
+        try {
+            productList = (ArrayList<Product>) fileHandle.readFile();
+        }
+        catch (Exception e) {
+            System.out.println("Cannot read file");
+        }
+
+
         if(productList.isEmpty()){
             System.out.println("No product to show");
         }

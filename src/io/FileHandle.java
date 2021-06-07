@@ -27,7 +27,7 @@ public class FileHandle {
         if (!file.exists()) {
             file.createNewFile();
         }
-        FileInputStream fileInputStream = new FileInputStream(filePath);
+        FileInputStream fileInputStream = new FileInputStream(file);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
         Object o = objectInputStream.readObject();
