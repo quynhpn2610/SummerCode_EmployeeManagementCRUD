@@ -2,10 +2,7 @@ package io;
 
 import model.Product;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class FileHandle {
@@ -23,5 +20,21 @@ public class FileHandle {
 
         objectOutputStream.close();
         fileOutputStream.close();
+    }
+
+    public Object readFile() throws IOException, ClassNotFoundException {
+        File file = new File(filePath);
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        FileInputStream fileInputStream = new FileInputStream(filePath);
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+        Object o = objectInputStream.readObject();
+
+        fileInputStream.close();
+        objectInputStream.close();
+
+        return o;
     }
 }
