@@ -30,8 +30,6 @@ public class ProductService implements IProductService {
         catch (Exception e) {
             System.out.println("Cannot read file");
         }
-
-
         if(productList.isEmpty()){
             System.out.println("No product to show");
         }
